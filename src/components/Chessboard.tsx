@@ -36,10 +36,10 @@ const Chessboard: FC<ChessboardProps> = ({
           // Skip empty squares
           fileIndex += parseInt(char, 10);
         } else {
+          const color = char === char.toUpperCase() ? 'w' : 'b';
           // Place a piece
           const file = files[fileIndex];
           const square = file + rank;
-          const color = char === char.toUpperCase() ? 'w' : 'b';
           const type = char.toLowerCase();
           
           board[square] = { type, color };
